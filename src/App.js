@@ -27,6 +27,13 @@ const shoppingCart = [
   },
 ];
 export default function App() {
+  const [item, setItem] = useState({
+    id: 0,
+    product: '',
+    qty: 0,
+    price: 0
+  })
+  
   let total = shoppingCart.reduce((a, b) => {
     return a + (b.qty * b.price)/shoppingCart.length;
   }, 0);
