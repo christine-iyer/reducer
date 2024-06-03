@@ -1,4 +1,4 @@
-import React from 'react';
+import {useState} from 'react';
 
 const shoppingCart = [
   {
@@ -33,7 +33,7 @@ export default function App() {
     qty: 0,
     price: 0
   })
-  
+
   let total = shoppingCart.reduce((a, b) => {
     return a + (b.qty * b.price)/shoppingCart.length;
   }, 0);
