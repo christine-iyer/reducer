@@ -48,13 +48,19 @@ export default function App() {
   
   ])
 
+  const addItem = (e) => {
+    const newItem = { text: e.target.value, id: shoppingCart.length-1, completed: false }
+    setShoppingCart([newItem, ...shoppingCart])
+    e.target.value = ''
+}
+
   let total = shoppingCart.reduce((a, b) => {
     return a + (b.qty * b.price)/shoppingCart.length;
   }, 0);
   return (
     <div className="container text-center mt-3">
    <>
-   <CreateShoppingItem/>
+   <CreateShoppingItem item={item} setItem={setItem}/>
    </>
       <h1>Shopping Cart</h1>
       <h5>Average: ${total.toFixed(2)}</h5>
