@@ -25,6 +25,12 @@ const shoppingCart = [
     qty: 1,
     price: 15.99,
   },
+  {
+    id: 5,
+    product: 'Mens Casual Slim Fit',
+    qty: 4,
+    price: 22.06,
+  }
 ];
 export default function App() {
   const [item, setItem] = useState({
