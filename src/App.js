@@ -1,70 +1,45 @@
-import {useState} from 'react';
-import './components/CreateShoppingItem'
-import CreateShoppingItem from './components/CreateShoppingItem';
+import { useState } from "react";
+import CreateShoppingItem from "./components/CreateShoppingItem";
 
-
-export default function App() {
+export default function App(){
   const [item, setItem] = useState({
-    id: 0,
     product: '',
     qty: 0,
-    price: 0
+    price: 0,
   })
-  const [shoppingCart, setShoppingCart] = useState([
-    {
-      id: 1,
-      product: 'Green Jacket',
-      qty: 1,
-      price: 109.95,
-    },
-    {
-      id: 2,
-      product: 'Green Pants ',
-      qty: 1,
-      price: 22.3,
-    },
-    {
-      id: 3,
-      product: 'White Shoes',
-      qty: 2,
-      price: 55.99,
-    },
-    {
-      id: 4,
-      product: 'T-Shirt',
-      qty: 1,
-      price: 15.99,
-    },
-    {
-      id: 5,
-      product: 'White Belt',
-      qty: 4,
-      price: 22.06,
-    }, {
-    id: 6, 
-    product: 'White Bag',
-    qty: 1,
-    price: 139.99,}
-  
+  const [items, setItems] = useState([
+    {id: 1, product: "Milk", qty: 1, price: 1.99},
+    {id: 2, product: "Bread", qty: 2, price: 2.99},
+    {id: 3, product: "Cheese", qty: 3, price: 3.99},
+    {id: 4, product: "Eggs", qty: 4, price: 4.99},
+    {id: 5, product: "Butter", qty: 5, price: 5.99},
+    {id: 6, product: "Sugar", qty: 6, price: 6.99},
+    {id: 7, product: "Coffee", qty: 7, price: 7.99},
   ])
 
-  const addItem = (e) => {
-    const newItem = { text: e.target.value, id: shoppingCart.length-1, completed: false }
-    setShoppingCart([newItem, ...shoppingCart])
-    e.target.value = ''
-}
+  const createItem = (e) => {
+    e.preventDefault()
+    setItems([...items, item])
+    setItem({
+      product: e.target.value,
+      qty: 0,
+      price: 0,
+    })
 
-  let total = shoppingCart.reduce((a, b) => {
-    return a + (b.qty * b.price)/shoppingCart.length;
-  }, 0);
-  return (
-    <div className="container text-center mt-3">
-   <>
-   <CreateShoppingItem item={item} setItem={setItem}/>
-   </>
-      <h1>Shopping Cart</h1>
-      <h5>Average: ${total.toFixed(2)}</h5>
-      <button className="btn btn-primary mt-3">Checkout</button>
-    </div>
-  );
+  }
+const total = items.reduce((total, item)=> {
+  return total + item.price * item.qty
+})
+
+  const handleChange = (e) => {
+    setItem({...item, [e.target.name]: e.target.value})
+  }
+
+  
+
+return(
+  <>
+  <CreateShoppingItem/>
+  </>
+)
 }
