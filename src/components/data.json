@@ -1,0 +1,13 @@
+[
+     {"category": "Sativa", "price": "$1", "stocked": true, "name": "Apple Fritter"},
+     {"category": "Sativa", "price": "$1", "stocked": true, "name": "Dragonfruit Sorbetto"},
+     {"category": "Sativa", "price": "$2", "stocked": false, "name": "Passionfruit"},
+     {"category": "Indica", "price": "$2", "stocked": true, "name": "GG"},
+     {"category": "Indica", "price": "$4", "stocked": false, "name": "Turkish Delight"},
+     {"category": "Indica", "price": "$1", "stocked": true, "name": "Pomegranite Purple"}, 
+     {"category": "Hybrid", "price": "$3", "stocked": true, "name": "Southeast Breeze"},
+     {"category": "Hybrid", "price": "$4", "stocked": true, "name": "Noreaster"}, 
+     {"category": "Hybrid", "price": "$5", "stocked": true, "name": "Salt n Pepper"}
+]
+   
+   

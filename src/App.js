@@ -4,6 +4,7 @@ import PRODUCTS from "./components/data";
 import ProductTable from "./components/ProductTable";
 
 export default function App() {
+  const products=require()
   const [filterText, setFilterText] = " ";
   const [inStockOnly, setInStockOnly] =useState(false)
   return(
