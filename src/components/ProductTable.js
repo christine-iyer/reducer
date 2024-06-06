@@ -1,12 +1,12 @@
 import React from 'react'
-import products from'./data.json'
+import PRODUCTS from'./data.json'
 import ProductCategoryRow from './ProductCategoryRow'
 import ProductRow from './ProductRow'
 
-export default function ProductTable({ products,filterText, inStockOnly}) {
+export default function ProductTable({ filterText, inStockOnly}) {
      const rows= []
      const lastCategory = null
-     const products = require('./data.json)
+     const products = PRODUCTS 
      products.forEach((product)=> {
           if(product.name.toLowerCase().indexOf(
                filterText.toLowerCase()
