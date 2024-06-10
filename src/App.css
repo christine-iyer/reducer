@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: left;
 }
 
@@ -35,4 +35,38 @@
   to {
     transform: rotate(360deg);
   }
+} */
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: rgb(255, 255,13);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(255, 25,130);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+button { 
+  background-color: rgb(25, 255,13);
+  margin-left: 10px;
+  padding: 5px 10px;
+  font-size: 1em;
+  outline-style: dashed;
+  outline-color: antiquewhite;
+  border-radius: 12fr;
+ 
 }

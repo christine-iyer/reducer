@@ -14,11 +14,11 @@ const data = [
     {"category": "Hybrid", "price": "$5", "stocked": true, "name": "Salt n Pepper"}
 ];
 
-function calculateAveragePrice(products) {
-    const total = products.reduce((acc, product) => {
-        return acc + parseFloat(product.price.replace('$', ''));
+function calculateAveragePrice(cart) {
+    const total = cart.reduce((acc, item) => {
+        return acc + parseFloat(item.price.replace('$', ''));
     }, 0);
-    return (total / products.length).toFixed(2);
+    return (total / cart.length).toFixed(2);
 }
 
 function calculateTotalPrice(cart) {
@@ -35,7 +35,7 @@ function App() {
         setCart([...cart, product]);
     };
 
-    const averagePrice = calculateAveragePrice(data);
+    const averagePrice = calculateAveragePrice(cart);
     const totalPrice = calculateTotalPrice(cart);
 
     return (
@@ -43,6 +43,7 @@ function App() {
             <header className="App-header">
                 <h1>Average Price Calculator</h1>
                 <p>The average price of the products is: ${averagePrice}</p>
+                <p>Total Price: ${totalPrice}</p>
                 <h2>Product List</h2>
                 <ul>
                     {data.map((product, index) => (
@@ -58,7 +59,7 @@ function App() {
                         <CartItem key={index} item={item} />
                     ))}
                 </ul>
-                <p>Total Price: ${totalPrice}</p>
+            
             </header>
         </div>
     );
